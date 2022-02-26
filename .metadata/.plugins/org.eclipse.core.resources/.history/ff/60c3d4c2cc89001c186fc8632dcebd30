@@ -1,0 +1,6 @@
+package com.capstone.ComplaintRedressalSystem.controller;
+
+@RestController
+public class AdminJPAResource {
+
+}

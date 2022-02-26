@@ -1,0 +1,44 @@
+package com.capstone.ComplaintRedressalSystem.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.capstone.ComplaintRedressalSystem.dao.AdminRepository;
+import com.capstone.ComplaintRedressalSystem.entity.Admin;
+
+@RestController
+public class AdminJPAResource {
+	
+	@Autowired
+	private AdminRepository adminRepo;
+	
+	@GetMapping("/get-admin")
+	public List<Admin> getAdminDetails()
+	{
+		List<Admin> admin = adminRepo.findAll();
+		return admin;
+	}
+	
+	@DeleteMapping("/delete-admin/{id}")
+	public void deleteAdmin(@PathVariable long id)
+	{
+		adminRepo.deleteById(id);
+	}
+	
+	@PostMapping("/save-admin")
+	public Admin saveAdmin(@Validated @RequestBody Admin admin)
+	{
+		Admin saveAdmin = adminRepo.save(admin);
+		return saveAdmin;
+	}
+	
+
+}

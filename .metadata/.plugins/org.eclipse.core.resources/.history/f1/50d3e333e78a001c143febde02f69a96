@@ -1,0 +1,6 @@
+package com.capstone.ComplaintRedressalSystem.service;
+
+public interface AdminService {
+	
+
+}

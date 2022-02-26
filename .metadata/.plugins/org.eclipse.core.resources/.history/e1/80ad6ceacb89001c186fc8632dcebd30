@@ -1,0 +1,6 @@
+package com.capstone.ComplaintRedressalSystem.dao;
+
+
+public interface AdminRepository extends JpaRepository(Admin, Long){
+
+}

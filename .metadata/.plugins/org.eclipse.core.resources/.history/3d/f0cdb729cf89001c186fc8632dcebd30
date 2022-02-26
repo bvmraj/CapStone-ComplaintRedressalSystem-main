@@ -1,0 +1,28 @@
+package com.capstone.ComplaintRedressalSystem.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.capstone.ComplaintRedressalSystem.dao.AdminRepository;
+import com.capstone.ComplaintRedressalSystem.entity.Admin;
+
+@RestController
+public class AdminJPAResource {
+	
+	@Autowired
+	private AdminRepository adminRepo;
+	
+	@GetMapping("/admin")
+	public List<Admin> getAdminDetails()
+	{
+		List<Admin> admin = adminRepo.findAll();
+		return admin;
+	}
+	
+	public 
+	
+
+}

@@ -1,0 +1,12 @@
+package com.capstone.ComplaintRedressalSystem.service;
+
+import java.util.List;
+
+import com.capstone.ComplaintRedressalSystem.model.Admin;
+
+public interface AdminService {
+	
+	List<Admin> findAll();
+	Admin findById(long id);
+
+}
